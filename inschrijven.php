@@ -12,7 +12,7 @@
 <h2>inschrijven</h2>
 <a href="index.php">Klik hier om terug te keren naar de homepage</a><br><br>
 
-<form method="post" action="verwerk_inschrijven.php">
+<form method="post" action="verwerk_inschrijving.php">
 
     <label>Voornaam:<input type="text" name="voornaam"/></label><br>
 
