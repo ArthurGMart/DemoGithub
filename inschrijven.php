@@ -10,7 +10,7 @@
 <body>
 <h1>NIEUWSBRIEF</h1>
 <h2>inschrijven</h2>
-<a href="index.php">Klik hier om terug te keren naar de homepage</a><br>
+<a href="index.php">Klik hier om terug te keren naar de homepage</a><br><br>
 
 <form method="post" action="verwerk_inschrijven.php">
 
@@ -18,7 +18,7 @@
 
     <label>Tussenvoegsel:<input type="text" name="tussenvoegsel"/></label><br>
         <label>Achternaam:<input type="text" name="achternaam"/></label><br>
-            <label>Mailadres:<input type="email" name="mailadres"/></label><br>
+            <label>Mailadres:<input type="email" name="mailadres"/></label><br><br>
                 <input type="submit" name="submit"/>
 
 </form>
