@@ -12,3 +12,11 @@ $query = "SELECT mailadres FROM nieuwsbrief_tutorial";
 $result = mysqli_query($dbc, $query) or die ('Error querying');
 
 // 3. Loopje waarin een bericht wordt verzonden naar alle mailadressen
+while ($row = mysqli_fetch_array($result)) {
+    echo 'Mail verzonden naar' . $row['mailadres'] . '<br>';
+    // Variabalen voor de mail
+    $to = $row['mailadres'];
+    $headers = 'From: arthurgonzie@gmail.com';
+    // Mail verzenden
+    mail($to, $subject, $message, $headers);
+}
