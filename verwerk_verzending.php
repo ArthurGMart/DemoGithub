@@ -20,3 +20,5 @@ while ($row = mysqli_fetch_array($result)) {
     // Mail verzenden
     mail($to, $subject, $message, $headers);
 }
+
+echo 'Klaar met verzenden';
