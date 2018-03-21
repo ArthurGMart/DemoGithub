@@ -8,7 +8,7 @@ $mailadres = $_POST['mailadres'];
 
 // DATA IN DATABASE STOPPEN
 // 1. VERBINDING MAKEN MET DATABASE
-mysqli_connect('localhost','root','','arthur_db') or die ('Error connecting.');
+$dbc = mysqli_connect('localhost','root','','arthur_db') or die ('Error connecting.');
 // 2. OPDRACHT (QUERY) SCHRIJVEN VOOR DE DATABASE
 
 // 3. QUERY UITVOEREN
