@@ -9,7 +9,7 @@ $dbname   = 'arthur_db';
 
 $dbc = mysqli_connect($host,$username,$password,$dbname) or die ('Error connecting');
 echo 'Connectie geslaagd';
-// QUERY BEDENKEN
+// QUERY SCHRIJVEN VOOR ZOEKEN NAAR DATA
 $query = "SELECT * FROM nieuwsbrief_tutorial WHERE mailadres = '$mailadres'";
 // QUERY UITVOEREN
 $result = mysqli_query($dbc,$query) or die ('Error querying');
@@ -25,6 +25,12 @@ if ($number_of_rows == 0) {
 } else {
     echo 'Hoera! Het mailadres ' . $mailadres . ' is gevonden in de database!';
 }
+// QUERY SCHRIJVEN VOOR VERWIJDEREN DATA
+$query = "DELETE FROM nieuwsbrief_tutorial WHERE mailadres = '$mailadres'";
+// QUERY UITVOEREN
+$result = mysqli_query($dbc,$query) or die ('Error querying.');
+
+
 // CONNECTIE VERBREKEN
 
 // VERSLAG DOEN VAN HET RESULTAAT
