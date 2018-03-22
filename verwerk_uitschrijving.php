@@ -14,6 +14,9 @@ $query = "SELECT * FROM nieuwsbrief_tutorial WHERE mailadres = '$mailadres'";
 // QUERY UITVOEREN
 $result = mysqli_query($dbc,$query) or die ('Error querying');
 echo 'Query geslaagd!';
+// TELLEN HOEVEEL REGELS WE NU HEBBEN
+$number_of_rows = mysqli_num_rows($result) or die ('Error counting.');
+echo 'Tellen geslaagd, namelijk: ' . $number_of_rows . '<br>';
 // CONNECTIE VERBREKEN
 
 // VERSLAG DOEN VAN HET RESULTAAT
