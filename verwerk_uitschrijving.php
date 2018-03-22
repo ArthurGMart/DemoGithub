@@ -17,6 +17,14 @@ echo 'Query geslaagd!';
 // TELLEN HOEVEEL REGELS WE NU HEBBEN
 $number_of_rows = mysqli_num_rows($result) or die ('Error counting.');
 echo 'Tellen geslaagd, namelijk: ' . $number_of_rows . '<br>';
+// TESTEN OF ER REGELS ZIJN EN DAAR CONCLUSIES AAN VERBINDEN
+if ($number_of_rows == 0) {
+    echo 'Helaas, het mailadres ' . $mailadres . ' staat niet in de database.';
+    echo '<a href="uitschrijven.php">Klik hier om het nogmaals te proberen</a><br><br>';
+    exit();
+} else {
+    echo 'Hoera! Het mailadres ' . $mailadres . ' is gevonden in de database!';
+}
 // CONNECTIE VERBREKEN
 
 // VERSLAG DOEN VAN HET RESULTAAT
