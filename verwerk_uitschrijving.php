@@ -12,7 +12,7 @@ echo 'Connectie geslaagd';
 // QUERY SCHRIJVEN VOOR ZOEKEN NAAR DATA
 $query = "SELECT * FROM nieuwsbrief_tutorial WHERE mailadres = '$mailadres'";
 // QUERY UITVOEREN
-$result = mysqli_query($dbc,$query) or die ('Error querying');
+$result = mysqli_query($dbc,$query) or die ('Error querying (SELECT).');
 echo 'Query geslaagd!';
 // TELLEN HOEVEEL REGELS WE NU HEBBEN
 $number_of_rows = mysqli_num_rows($result) or die ('Error counting.');
@@ -22,15 +22,13 @@ if ($number_of_rows == 0) {
     echo 'Helaas, het mailadres ' . $mailadres . ' staat niet in de database.';
     echo '<a href="uitschrijven.php">Klik hier om het nogmaals te proberen</a><br><br>';
     exit();
-} else {
-    echo 'Hoera! Het mailadres ' . $mailadres . ' is gevonden in de database!';
 }
 // QUERY SCHRIJVEN VOOR VERWIJDEREN DATA
 $query = "DELETE FROM nieuwsbrief_tutorial WHERE mailadres = '$mailadres'";
 // QUERY UITVOEREN
-$result = mysqli_query($dbc,$query) or die ('Error querying.');
-
-
+$result = mysqli_query($dbc,$query) or die ('Error querying (DELETE).');
 // CONNECTIE VERBREKEN
-
+mysqli_close($dbc);
 // VERSLAG DOEN VAN HET RESULTAAT
+echo 'Het mailadres ' . $mailadres . ' is verwijderd uit de database!<br>';
+echo'<a href="index.php">Klik hier om terug te keren naar de homepage</a><br><br>';
